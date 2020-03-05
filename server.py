@@ -42,7 +42,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
 def autocomplete(text,state):
     dictionary = ['download', 'exit', 'help', 'powershell', 'screenshot', 'session', 'upload', 'weapon']
-    w_dictionary = ['BasicEnum']
+    w_dictionary = ['BasicEnum', 'Inject', 'Help']
 
     if text.startswith('weapon '):
         text = text[7:]
