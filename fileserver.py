@@ -3,7 +3,7 @@ import BaseHTTPServer
 import os
 import ssl
 
-HOST = '10.200.32.131'
+HOST = '0.0.0.0'
 PORT = 4443
 
 class Handler(BaseHTTPServer.BaseHTTPRequestHandler):

