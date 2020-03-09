@@ -42,11 +42,11 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
 def autocomplete(text,state):
     dictionary = ['download', 'exit', 'help', 'powershell', 'screenshot', 'session', 'upload', 'weapon']
-    w_dictionary = ['basicenum', 'autoinject', 'help']
+    w_dictionary = ['basicenum', 'inject', 'help']
 
     if text.startswith('weapon '):
         text = text[7:]
-        results = [x for x in w_dictionary if x.startswith(text)] + [None]
+        results = [x + ' ' for x in w_dictionary if x.startswith(text)] + [None]
         results[state] = 'weapon ' + results[state]
     elif text.startswith('upload '):
         text = text[7:]
@@ -58,7 +58,7 @@ def autocomplete(text,state):
         results = [x for x in tmp_dictionary if x.startswith("Storage/{}/".format(sessionid) + text)] + [None]
         results[state] = 'upload ' + results[state][len("Storage/{}/".format(sessionid)):]
     else:
-        results = [x for x in dictionary if x.startswith(text)] + [None]
+        results = [x + ' ' for x in dictionary if x.startswith(text)] + [None]
     return results[state]
 
 
